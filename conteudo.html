@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #2d3436;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #2d3436, #d3d3d3);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #2d3436, #d3d3d3);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            color: #fff;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #2d3436;
+            text-align: center;
+            border-radius: 4px;
+            margin: 2em 0;
+        }
+
+        .tab button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+            color: #fff;
+            margin: 5px;
+            border-radius: 4px;
+        }
+
+        .tab button:hover {
+            background-color: #d3d3d3;
+            color: #2d3436;
+        }
+
+        .tab button.active {
+            background-color: #d3d3d3;
+            color: #2d3436;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+            border-radius: 4px;
+            background-color: #d3d3d3;
+            color: #2d3436;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 style="text-align: center;">Cursos de JavaScript e C# com Visual Studio</h2>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openCourse(event, 'JavaScript')">JavaScript</button>
+        <button class="tablinks" onclick="openCourse(event, 'C#')">C# com Visual Studio</button>
+    </div>
+
+    <div id="JavaScript" class="tabcontent">
+        <h3>Curso de JavaScript</h3>
+        <p>
+            1. Introdução ao JavaScript<br>
+            - O que é JavaScript<br>
+            - Sintaxe básica<br>
+            2. Conceitos Básicos de JavaScript<br>
+            - Variáveis e tipos de dados<br>
+            - Operadores<br>
+            3. Funções em JavaScript<br>
+            - Definindo funções<br>
+            - Funções de callback<br>
+            4. Objetos e Arrays<br>
+            - Criando e manipulando objetos<br>
+            - Criando e manipulando arrays<br>
+            5. JavaScript Avançado<br>
+            - Funções de ordem superior<br>
+            - Promises e async/await<br>
+            6. Conceitos Modernos de JavaScript<br>
+            - ES6 e além<br>
+            - JavaScript no desenvolvimento front-end moderno<br>
+            7. Projetos Práticos<br>
+            - Criação de um projeto web interativo<br>
+            - Criação de uma API REST com Node.js<br>
+        </p>
+    </div>
+
+    <div id="C#" class="tabcontent">
+        <h3>Curso de Desenvolvimento C# com Visual Studio e conexão com MySQL</h3>
+        <p>
+            1. Introdução ao C# e Visual Studio<br>
+            - O que é C#<br>
+            - Como funciona o Visual Studio<br>
+            2. Conceitos Básicos de C#<br>
+            - Variáveis e tipos de dados<br>
+            - Operadores<br>
+            3. Funções e Métodos<br>
+            - Definindo métodos<br>
+            - Sobreposição e sobrecarga de métodos<br>
+            4. Programação Orientada a Objetos<br>
+            - Classes e objetos<br>
+            - Herança e polimorfismo<br>
+            5. Desenvolvimento com Visual Studio<br>
+            - Construindo uma aplicação .NET<br>
+            - Depurando e testando com Visual Studio<br>
+            6. Banco de Dados MySQL<br>
+            - SQL básico<br>
+            - Conexão MySQL em C#<br>
+            7. Desenvolvimento de Aplicações .NET com MySQL<br>
+            - Criação de uma aplicação de console de banco de dados<br>
+            - Criação de uma aplicação web de banco de dados<br>
+            8. Projetos Práticos<br>
+            - Criação de um sistema de gerenciamento de funcionários<br>
+            - Criação de uma loja virtual<br>
+        </p>
+    </div>
+
+    <script>
+        function openCourse(evt, courseName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(courseName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementsByClassName("tablinks")[0].click();
+    </script>
+
+</body>
+
+</html>
